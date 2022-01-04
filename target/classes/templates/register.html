@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Register</title>
+    <link th:href="@{styles.css}" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-primary" style="background-image: url('/background.jpeg')">
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+      <main style="background: url('/static/background.jpeg')">
+         <div class="container" >
+           <div class="row justify-content-center">
+              <div class="col-lg-7">
+                   <div class="card shadow-lg border-0 rounded-lg mt-5">
+                       <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
+                        <div class="card-body">
+                            <form th:action="@{/registerUser}" th:object="${user}" method="post">
+                                <div class="row mb-3">
+                                   <div class="col-md-6">
+                                      <div class="form-floating mb-3 mb-md-0">
+                                         <input class="form-control" id="inputFirstName" type="text"
+                                                placeholder="Enter your first name" th:field="*{firstname}" required/>
+                                          <label for="inputFirstName">First name</label>
+                                      </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input class="form-control" id="inputLastName" type="text"
+                                                       placeholder="Enter your last name" th:field="*{lastname}"  required/>
+                                                <label for="inputLastName">Last name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com"
+                                                   th:field="*{email}" required/>
+                                            <label for="inputEmail">Email address</label>
+                                        </div>
+                                    </div>
+                                        <div class="col-md-6">
+                                            <div class="form-control">
+                                           <div><label>Gender:</label></div>
+                                            <label for="female">Female</label>
+                                            <input type="radio" th:field="*{gender}" id="female" name="gender" value="Female"/>
+                                            <label for="male">Male </label>
+                                            <input type="radio" th:field="*{gender}" id="male" name="gender" value="Male"/>
+                                            <label for="custom">Custom </label>
+                                            <input type="radio" th:field="*{gender}" id="custom" name="gender" value="Custom"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input class="form-control" id="inputPassword" type="password"
+                                                       placeholder="Create a password" th:field="*{password}" required/>
+                                                <label for="inputPassword">Password</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input type="date" name="dob" class="form-control" id="date" required/>
+                                                <label for="date">Date of Birth</label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 mb-0">
+<!--                                    <div class="d-grid"><a class="btn btn-primary btn-block" href="@{/regist}">Create Account</a></div>-->
+                                    <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer text-center py-3">
+                                <div class="small"><a th:href="@{/}">Have an account? Go to login</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="layoutAuthentication_footer">
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted">Copyright &copy; DecaDev Task Manager By Chukwudozie Emeka &trade; 2021</div>
+                    <div>
+                        <a href="#">Privacy Policy</a>
+                        &middot;
+                        <a href="#">Terms &amp; Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="/static/scripts.js"></script>
+</body>
+</html>
